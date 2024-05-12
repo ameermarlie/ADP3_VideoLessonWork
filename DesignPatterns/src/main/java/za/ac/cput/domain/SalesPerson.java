@@ -1,12 +1,14 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import org.springframework.mock.http.server.reactive.MockServerHttpRequest;
 
 import java.util.Objects;
 
 @Entity
 public class SalesPerson extends BaseEmployee{
+
     private String salesId;
     private double commission;
 
