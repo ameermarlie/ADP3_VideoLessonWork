@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository
 //String was changed to EmployeeID in the parameters of the below public class
-public interface EmployeeRepository extends JpaRepository<Employee, EmployeeID> {
-    Employee findByFirstName(String firstName);
-    void deleteEmployeeByFirstName(String firstName);
-    void deleteEmployeesByLastName(String lastName);
-
+public interface EmployeeRepository extends JpaRepository<Employee, String> {
+//    Employee findByFirstName(String firstName);
+//    void deleteEmployeeByFirstName(String firstName);
+//    void deleteEmployeesByLastName(String lastName);
+//    void Delete(String id);
 }

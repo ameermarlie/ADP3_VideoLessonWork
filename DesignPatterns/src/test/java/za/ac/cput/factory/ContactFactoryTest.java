@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class ContactFactoryTest {
     @Test
     void buildContact(){
-        Contact contact = ContactFactory.buildContact("username@domain.com","0672703377");
+        Contact contact = ContactFactory.buildContact("username@domain.com","0672703377","LinkedAmeer");
         assertNotNull(contact);
         System.out.println(contact.toString());
     }
     void buildContactwithFail(){
-        Contact contact=ContactFactory.buildContact("ameermarlie","021");
+        Contact contact=ContactFactory.buildContact("ameermarlie","021","LinkedAmeer");
         assertNull(contact);
         System.out.println(contact.toString());
     }

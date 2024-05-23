@@ -4,9 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EmployeeRepositoryTest {
+class MotoGPRacerRepositoryTest {
 
-    @Test
-    void findByFirstName() {
-    }
+
 }

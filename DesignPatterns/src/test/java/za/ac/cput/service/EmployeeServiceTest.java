@@ -1,5 +1,6 @@
 package za.ac.cput.service;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -10,10 +11,11 @@ import za.ac.cput.domain.EmployeeID;
 import za.ac.cput.factory.EmployeeFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class EmployeeServiceTest {
+class   EmployeeServiceTest {
     @Autowired
     private EmployeeService employeeService;
     private static Employee employee1;
@@ -63,8 +65,7 @@ class EmployeeServiceTest {
 
     @Test
     void c_read() {
-        EmployeeID id=new EmployeeID(employee2.getFirstName(),employee2.getLastName());
-        Employee read = employeeService.read(id);
+        Employee read=employeeService.read(employee1.getEmployeeNumber());
         assertNotNull(read);
         System.out.println(read);
     }
@@ -80,5 +81,10 @@ class EmployeeServiceTest {
     @Test
     void e_getall() {
         System.out.println(employeeService.getall());
+    }
+    @Test
+    void f_delete(){
+        employeeService.deleteById(employee1.getEmployeeNumber());
+        System.out.println("Deleted successfully");
     }
 }

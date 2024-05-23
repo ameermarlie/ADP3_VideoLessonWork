@@ -8,14 +8,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerFactoryTest {
 
-    Contact contact = ContactFactory.buildContact("ameermarlie@gmail.com","0672703377");
 
     @Test
     void buildCustomer(){
+        Contact contact=ContactFactory.buildContact("ameermarlie@gmail.com","0672703377","LinkedInAmeer");
+        assertNotNull(contact);
         Customer customer = CustomerFactory.buildCustomer("222124474","Ameer","Marlie",contact);
         assertNotNull(customer);
         System.out.println(customer.toString());
         }
         //build customer
-    }
 
+    @Test
+    void buildCustomerWithString(){
+
+        Customer customer = CustomerFactory.buildCustomer("222124474","Ameer","Marlie","ameermarlie@gmail.com","0786754432","LinkedInAmeer");
+        assertNotNull(customer);
+        System.out.println(customer);
+}
+
+    }

@@ -6,9 +6,9 @@ import za.ac.cput.repository.EmployeeRepository;
 
 import java.util.List;
 
-public interface IEmployeeService extends IService<Employee, EmployeeID>{
+public interface IEmployeeService extends IService<Employee, String>{
+    void deleteById(String id);
     List<Employee> getall();
     List<Employee> getbyname(String name);
-
     Employee findByName(String firstName);
 }

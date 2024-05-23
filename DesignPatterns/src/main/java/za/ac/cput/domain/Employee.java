@@ -9,14 +9,14 @@ import java.util.Objects;
 //-------------BUILDER EXAMPLE------------
 
 @Entity
-@IdClass(EmployeeID.class)
+//@IdClass(EmployeeID.class)
 //@Table(name="Employee")
 public class Employee {
-
+    @Id
     private String employeeNumber;
-    @Id
+
     private String firstName;
-    @Id
+
     private String lastName;
 
 
