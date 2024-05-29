@@ -2,10 +2,11 @@ package za.ac.cput.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
 import java.util.Objects;
 
-@Entity
+@MappedSuperclass
 public class BaseEmployee {
     @Id
     protected String employeeNumber;
@@ -14,7 +15,6 @@ public class BaseEmployee {
 
     protected String lastName;
 
-    protected double salary;
 
 
     protected BaseEmployee(){}
@@ -29,20 +29,17 @@ public class BaseEmployee {
     public String getLastName() {
         return lastName;
     }
-    public double getSalary() {
-        return salary;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof BaseEmployee that)) return false;
-        return Double.compare(getSalary(), that.getSalary()) == 0 && Objects.equals(getEmployeeNumber(), that.getEmployeeNumber()) && Objects.equals(getFirstName(), that.getFirstName()) && Objects.equals(getLastName(), that.getLastName());
+        return Objects.equals(getEmployeeNumber(), that.getEmployeeNumber()) && Objects.equals(getFirstName(), that.getFirstName()) && Objects.equals(getLastName(), that.getLastName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmployeeNumber(), getFirstName(), getLastName(), getSalary());
+        return Objects.hash(getEmployeeNumber(), getFirstName(), getLastName());
     }
 
 
@@ -52,7 +49,6 @@ public class BaseEmployee {
                 "employeeNumber='" + employeeNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
                 '}';
     }
 }

@@ -19,7 +19,6 @@ public class Employee {
 
     private String lastName;
 
-
     public Employee(){}
 
     private Employee(Builder builder){

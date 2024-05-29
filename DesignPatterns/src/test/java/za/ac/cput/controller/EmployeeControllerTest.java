@@ -15,11 +15,12 @@ class EmployeeControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
     private final String Base_URL = "http://localhost:8080/payroll/employee";
-    private static Employee employee;
+    private static Employee employee,employee2;
 
     @BeforeAll
     public static void setUp() {
         employee = new EmployeeFactory().buildEmployee("222124474","Ben","Dover");
+        employee2 =new EmployeeFactory().buildEmployee("69696966","Naruto","Uzumaki");
     }
 
     @Test
